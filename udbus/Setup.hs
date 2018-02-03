@@ -50,8 +50,10 @@ my_ppHsc2hs bi lbi = standardPP lbi hsc2hsProgram $
 --    , "--ld=" ++ ld ]
 
     -- Additional gcc options
- ++ [ "--cflag=" ++ opt | opt <- programArgs gccProg ]
- ++ [ "--lflag=" ++ opt | opt <- programArgs gccProg ]
+ ++ [ "--cflag=" ++ opt | opt <- programDefaultArgs  gccProg 
+                              ++ programOverrideArgs gccProg ]
+ ++ [ "--lflag=" ++ opt | opt <- programDefaultArgs  gccProg
+                              ++ programOverrideArgs gccProg ]
 
     -- OSX frameworks:
  ++ [ what ++ "=-F" ++ opt
