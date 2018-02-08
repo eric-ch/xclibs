@@ -62,7 +62,7 @@ import Data.List
 import Data.Char
 import Data.String
 import Data.Maybe
-import Data.Typeable
+import Data.Typeable hiding (Proxy)
 import qualified Data.Text.Lazy as TL
 import Data.Text.Lazy (Text)
 import qualified Control.Exception as E
